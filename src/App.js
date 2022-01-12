@@ -8,10 +8,11 @@ import DisplayBalance from './components/DisplayBalance';
 import DisplayBalances from './components/DisplayBalances';
 import EntryLines from './components/EntryLines';
 import ModalEdit from './components/ModalEdit';
+import {useSelector} from 'react-redux';
 
 function App() {
 
-  const [entries, setEntries] = useState(initialEntries);
+  // const [entries, setEntries] = useState(initialEntries);
   const [description, setDescription] = useState('')
   const [value, setValue] = useState('')
   const [isExpense, setIsExpense] = useState(true)
@@ -20,7 +21,7 @@ function App() {
   const [incomeTotal, setIncomeTotal] = useState(0);
   const [expenseTotal, setExpenseTotal] = useState(0);
   const [total, setTotal] = useState(0);
-
+  const entries = useSelector((state) => state.entries )
 
   useEffect(() => {
     if (!isOpen && entryId) {
@@ -29,7 +30,7 @@ function App() {
       newEntries[index].description = description;
       newEntries[index].value = value;
       newEntries[index].isExpense = isExpense;
-      setEntries(newEntries);
+      //setEntries(newEntries);
       resetEntry();
     }
   }, [isOpen]);
@@ -49,14 +50,14 @@ function App() {
     setIncomeTotal(totalIncomes);
   }, [entries])
 
-  function deleteEntry(id) {
-    const result = entries.filter(entry => entry.id !== id);
-    setEntries(result);
-  }
+  // function deleteEntry(id) {
+  //   const result = entries.filter(entry => entry.id !== id);
+  //   //setEntries(result);
+  // }
 
   function addEntry() {
     const result = entries.concat({ id: entries.length + 1, description, value, isExpense });
-    setEntries(result);
+    //setEntries(result);
     resetEntry();
   }
 
@@ -89,18 +90,21 @@ function App() {
 
         <MainHeader title='History' type='h3' />
 
-        <EntryLines entries={entries} deleteEntry={deleteEntry} setIsOpen={setIsOpen} editEntry={editEntry} />
+        {/* <EntryLines entries={entries} deleteEntry={deleteEntry} setIsOpen={setIsOpen} editEntry={editEntry} /> */}
+
+        <EntryLines entries={entries} editEntry={editEntry} />
 
         <MainHeader title='Add new transaction' type='h3' />
 
-        <NewEntryForm
+        {/* <NewEntryForm
           addEntry={addEntry}
           description={description}
           value={value}
           isExpense={isExpense}
           setDescription={setDescription}
           setValue={setValue}
-          setIsExpense={setIsExpense} />
+          setIsExpense={setIsExpense} /> */}
+        <NewEntryForm/>
 
         <ModalEdit
           isOpen={isOpen}
@@ -119,35 +123,35 @@ function App() {
 
 export default App;
 
-var initialEntries = [
-  {
-    description: "Work Income",
-    id: 1,
-    value: 1000,
-    isExpense: false
-  },
-  {
-    description: "Water bill",
-    id: 2,
-    value: 10,
-    isExpense: true
-  },
-  {
-    description: "Rent",
-    id: 3,
-    value: 300,
-    isExpense: true
-  },
-  {
-    description: "Power bill",
-    id: 4,
-    value: 50,
-    isExpense: true
-  },
-  {
-    description: "Phone bill",
-    id: 5,
-    value: 80,
-    isExpense: true
-  }
-]
+// var initialEntries = [
+//   {
+//     description: "Work Income",
+//     id: 1,
+//     value: 1000,
+//     isExpense: false
+//   },
+//   {
+//     description: "Water bill",
+//     id: 2,
+//     value: 10,
+//     isExpense: true
+//   },
+//   {
+//     description: "Rent",
+//     id: 3,
+//     value: 300,
+//     isExpense: true
+//   },
+//   {
+//     description: "Power bill",
+//     id: 4,
+//     value: 50,
+//     isExpense: true
+//   },
+//   {
+//     description: "Phone bill",
+//     id: 5,
+//     value: 80,
+//     isExpense: true
+//   }
+// ]
