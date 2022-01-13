@@ -2,10 +2,10 @@ import React, { Fragment } from 'react'
 import { Grid, Segment, Icon } from 'semantic-ui-react';
 import { useDispatch } from 'react-redux';
 import { removeEntryRedux } from '../actions/entries.actions'
+import { openEditModal } from '../actions/modals.actions';
 
 function EntryLine(props) {
-    //const { id, description, value, isExpense = false, deleteEntry, editEntry } = props;
-    const { id, description, value, isExpense = false, editEntry } = props;
+    const { id, description, value, isExpense = false } = props;
     const dispatch = useDispatch();
     return (
         <Fragment>
@@ -22,7 +22,7 @@ function EntryLine(props) {
                             <Icon 
                                 name="edit" 
                                 bordered 
-                                onClick={() => editEntry(id)}></Icon>
+                                onClick={() => dispatch(openEditModal(id))}></Icon>
                             <Icon 
                                 name="trash" 
                                 bordered 
