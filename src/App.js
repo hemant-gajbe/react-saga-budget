@@ -8,7 +8,8 @@ import DisplayBalance from './components/DisplayBalance';
 import DisplayBalances from './components/DisplayBalances';
 import EntryLines from './components/EntryLines';
 import ModalEdit from './components/ModalEdit';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
+import { getAllEntries } from './actions/entries.actions';
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
   useEffect(() => {
     const index = entries.findIndex(entry => entry.id === id);
     setEntry(entries[index]);
-  }, [isOpen, id]);
+  }, [isOpen, id, entries]);
 
   useEffect(() => {
     let totalIncomes = 0;
@@ -39,6 +40,13 @@ function App() {
     setExpenseTotal(totalExpenses);
     setIncomeTotal(totalIncomes);
   }, [entries])
+
+  const disptach = useDispatch();
+
+  useEffect(() => {
+    // dispatch action getAllEntries not from saga
+    disptach(getAllEntries());
+  })
 
   return (
     <div className="App">
