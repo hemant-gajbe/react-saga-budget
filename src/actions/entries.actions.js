@@ -4,7 +4,9 @@ export const types = {
     UPDATE_ENTRY: 'UPDATE_ENTRY',
     GET_ENTRIES: 'GET_ENTRIES',
     POPULATE_ENTRIES: 'POPULATE_ENTRIES',
-    POPULATE_ENTRY_DETAILS: 'POPULATE_ENTRY_DETAILS'
+    POPULATE_ENTRY_DETAILS: 'POPULATE_ENTRY_DETAILS',
+    REMOVE_ENTRY_RESULT: 'REMOVE_ENTRY_RESULT',
+    ADD_ENTRY_RESULT: 'ADD_ENTRY_RESULT'
 }
 
 export default types;
@@ -25,10 +27,10 @@ export const getAllEntries = () => {
     return { type: types.GET_ENTRIES };
 }
 
-export const POPULATE_ENTRIES = (entries) => {
+export const populateEntries = (entries) => {
     return { type: types.POPULATE_ENTRIES, payload: entries}
 }
 
-export const POPULATE_ENTRY_DETAILS = (id, entry) => {
+export const populateEntryDetails = (id, entry) => {
     return { type: types.POPULATE_ENTRY_DETAILS, payload:  {id, entry}}
 }

@@ -46,7 +46,7 @@ function App() {
   useEffect(() => {
     // dispatch action getAllEntries not from saga
     disptach(getAllEntries());
-  })
+  }, [disptach])
 
   return (
     <div className="App">

@@ -1,52 +1,69 @@
-
 {
-    "entries": [
-        {
-            "description": "Work Income Redux",
-            "id": 1
-        },
-        {
-            "description": "Water bill",
-            "id": 2
-        },
-        {
-            "description": "Rent",
-            "id": 3
-        },
-        {
-            "description": "Power bill",
-            "id": 4
-        },
-        {
-            "description": "Phone bill",
-            "id": 5
-        }
-    ],
-    "values": [
-        {
-            "id": 1,
-            "value": 1000,
-            "isExpense": false
-        },
-        {
-            "id": 2,
-            "value": 10,
-            "isExpense": true
-        },
-        {
-            "id": 3,
-            "value": 300,
-            "isExpense": true
-        },
-        {
-            "id": 4,
-            "value": 50,
-            "isExpense": true
-        },
-        {
-            "id": 5,
-            "value": 80,
-            "isExpense": true
-        }
-    ]
+  "entries": [
+    {
+      "description": "Water bill",
+      "id": 1
+    },
+    {
+      "description": "Electricity bill",
+      "id": 2
+    },
+    {
+      "description": "Fuel bill",
+      "id": 3
+    },
+    {
+      "description": "Power bill",
+      "id": 4
+    },
+    {
+      "id": "0c6dea74-ae2c-450b-a781-4711abe4a23c",
+      "description": "Test"
+    },
+    {
+      "id": "ba99857c-24e6-4331-80d5-8882f0828c5d",
+      "description": "Test"
+    },
+    {
+      "id": "f483db49-672b-4b02-be19-fe646b076f75",
+      "description": "THIS ENTRY"
+    }
+  ],
+  "values": [
+    {
+      "id": 1,
+      "value": 1000,
+      "isExpense": false
+    },
+    {
+      "id": 2,
+      "value": 10,
+      "isExpense": true
+    },
+    {
+      "id": 3,
+      "value": 300,
+      "isExpense": true
+    },
+    {
+      "id": 4,
+      "value": 50,
+      "isExpense": true
+    },
+    {
+      "id": "0c6dea74-ae2c-450b-a781-4711abe4a23c",
+      "isExpense": true,
+      "value": "1000"
+    },
+    {
+      "id": "ba99857c-24e6-4331-80d5-8882f0828c5d",
+      "isExpense": false,
+      "value": "5000"
+    },
+    {
+      "id": "f483db49-672b-4b02-be19-fe646b076f75",
+      "isExpense": false,
+      "value": "8000"
+    }
+  ]
 }
